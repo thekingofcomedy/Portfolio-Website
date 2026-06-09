@@ -3,10 +3,10 @@
 const navHTML = `<nav>
 
                 <ul>
-                <li><a href="/Portfolio-Website/index.html">Home </a></li>
-                <li><a href="/Portfolio-Website/HTML/about.html">About</a></li>
-                <li><a href="/Portfolio-Website/HTML/projects.html">Projects</a></li>
-                <li><a href="/Portfolio-Website/HTML/contact.html">Contact</a></li>
+                <li><a href="/index.html">Home </a></li>
+                <li><a href="/HTML/about.html">About</a></li>
+                <li><a href="/HTML/projects.html">Projects</a></li>
+                <li><a href="/HTML/contact.html">Contact</a></li>
 
             </ul>
 
@@ -25,7 +25,7 @@ const themeIcon = document.querySelector("#theme-icon");
 
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark-mode");
-  themeIcon.src = "/Portfolio-Website/Images/dark mode symbol.png";
+  themeIcon.src = "/Images/dark mode symbol.png";
 }
 
 themeToggle.addEventListener("click", () => {
@@ -33,10 +33,10 @@ themeToggle.addEventListener("click", () => {
 
   if (document.body.classList.contains("dark-mode")) {
     localStorage.setItem("darkMode", "enabled");
-    themeIcon.src = "/Portfolio-Website/Images/dark mode symbol.png";
+    themeIcon.src = "/Images/dark mode symbol.png";
   } else {
     localStorage.setItem("darkMode", "disabled");
-    themeIcon.src = "/Portfolio-Website/Images/Light Mode Symbol.png";
+    themeIcon.src = "/Images/Light Mode Symbol.png";
   }
 });
 
@@ -64,4 +64,26 @@ navLinks.forEach((link) => {
   if (link.getAttribute("href") === currentPage) {
     link.classList.add("active");
   }
+});
+
+//Modals
+
+const modalBtns = document.querySelectorAll(".timeline-btn button");
+const modals = document.querySelectorAll(".modal");
+const closeBtns = document.querySelectorAll(".modal-close");
+
+modalBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    modals[index].classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+closeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".modal.active").forEach((modal) => {
+      modal.classList.remove("active");
+    });
+    document.body.style.overflow = "";
+  });
 });

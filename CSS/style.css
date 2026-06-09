@@ -123,7 +123,7 @@ body.dark-mode #email-logo{
     filter: invert(1);
 }
 
-body.dark-mode #linkedin-button{
+body.dark-mode #linkedin-footer{
     filter: invert(0);
 }
 
@@ -131,6 +131,15 @@ body.dark-mode nav a.active{
     border-bottom: 2px solid #efefef;
 }
 
+body.dark-mode .modal-content{
+    background-color: #5a5957;
+    color: #efefef;
+}
+
+body.dark-mode .modal-close{
+    background: none;
+    color: #efefef;
+}
 
 /*Universal Structuring*/
 nav ul{
@@ -150,6 +159,7 @@ nav {
 nav button{
     margin-left: auto;
 }
+
 
 footer p{
     position: absolute;
@@ -176,7 +186,7 @@ footer p{
     padding-bottom: 20px;
 }
 
-#linkedin-button{
+#linkedin-footer{
     width: 40px;
     height: 40px;
     filter: invert(1);
@@ -269,6 +279,9 @@ nav a.active {
 
 .card-header{
     margin-bottom: 0.5rem;
+    padding: 10px 15px;
+    background-color: #555451;
+    border-radius: 8px;
 }
 
 .card li{
@@ -282,11 +295,6 @@ nav a.active {
    padding-bottom: 50px;
 }
 
-.card-header{
-    padding: 10px 15px;
-    background-color: #555451;
-    border-radius: 8px;
-}
 
 .card-header h3{
     color: #cdcccb;
@@ -317,6 +325,9 @@ footer{
     max-width: 800px;
     margin: 0 auto;
     font-size: 18px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
 }
 
 .scroll-text{
@@ -357,9 +368,6 @@ footer{
 
 .timeline-content{
     line-height: 1.9;
-}
-
-.timeline-content{
     text-align: center;
 }
 
@@ -387,100 +395,233 @@ footer{
     cursor: pointer;
 }
 
-/*Reddam Content*/
+/*About Modals*/
 
-.reddam {
-    position: relative;
-    right: 20px;
-}
-
-.reddam .timeline-img{
-    position: relative;
-    left: 590px;
-    width: 100px;
-    bottom: 10px;
-}
-
-.reddam .timeline-content{
-    position: relative;
-    left: 150px;
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    justify-content: center;
     align-items: center;
 }
 
-/*Dale Content*/
+.modal.active{
+    display: flex;
+}
 
-.dale{
+.modal-content{
+    background-color: #efefef;
+    padding: 40px;
+    border-radius: 8px;
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
     position: relative;
-    right: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*Timeline Images*/
+
+.reddam .timeline-img{
+    width: 100px;
+    margin-right: 70px;
 }
 
 .dale .timeline-img{
-    position: relative;
-    left: 840px;
     width: 200px;
-    bottom: 30px;
-}
-
-.dale .timeline-content{
-    position: relative;
-    left: 865px;
-}
-
-/*Wits Content*/
-
-.wits{
-    position: relative;
-    right: 20px;
+    margin-bottom: 10px;
+    transform: translateX(10px);
 }
 
 .wits .timeline-img{
-    position: relative;
-    left: 540px;
     width: 200px;
-    bottom: 35px;
-}
-
-.wits .timeline-content{
-    position: relative;
-    left: 80px;
-}
-
-/*UCT Content*/
-
-.uct{
-    position: relative;
-    bottom: 30px;
+    margin-right: 50px;
 }
 
 .uct .timeline-img{
-    position: relative;
-    left: 765px;
-    width: 300px;
+    width: 150px;
+    transform: translateX(30px);
+    margin-bottom: 30px;
+}
+
+/*Timeline Content (Descriptions and Buttons)*/
+
+.reddam .timeline-content{
+    margin-right: 10px;
+}
+
+.wits .timeline-content{
+    margin-right: 40px;
+}
+
+.dale .timeline-content{
+    margin-left: 50px;
 }
 
 .uct .timeline-content{
-    position: relative;
-    left: 730px;
+    transform: translateX(90px);
+    margin-bottom: 30px;
 }
 
-/*Individual Content*/
+/*Reddam Modal*/
 
-.individual .timeline-img{
-    position: relative;
-    left: 580px;
-    width: 50px;
+.reddam-modal-text{
+    padding-top: 90px;
+    max-width: 700px;
+    padding-left: 50px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
+ }
+
+ .reddam-modal-title{
+    padding-bottom: 15px;
+    
+ }
+
+ .reddam-modal-details{
+    padding-bottom: 10px;
+ }
+
+
+.reddam-modal-img{
+    width: 200px;
+    flex-shrink: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 40px;
 }
 
-.individual .timeline-content{
-    position: relative;
-    left: 200px;
+
+/*Dale Modal*/
+
+.dale-modal-text{
+    padding-top: 80px;
+    max-width: 700px;
+    padding-left: 40px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
+    padding-bottom: 90px;
 }
+
+.dale-modal-img{
+    width: 200px;
+    flex-shrink: 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 40px;
+}
+
+.dale-modal-title{
+    padding-bottom: 15px;
+}
+
+.dale-modal-details{
+    padding-bottom: 10px;
+}
+
+
+/*Wits Modal*/
+
+.wits-modal-text{
+    padding-top: 80px;
+    max-width: 700px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
+    padding-bottom: 90px;
+}
+
+.wits-modal-img{
+    width: 250px;
+    flex-shrink: 0;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    
+}
+
+.wits-modal-title{
+    padding-bottom: 15px;
+}
+
+.wits-modal-details{
+    padding-bottom: 10px;
+}
+
+
+/*UCT Modal*/
+
+.uct-modal-text{
+    padding-top: 80px;
+    max-width: 700px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
+    padding-bottom: 90px;
+    padding-left: 40px;
+}
+
+.uct-modal-img{
+    width: 200px;
+    flex-shrink: 0;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.uct-modal-title{
+    padding-bottom: 15px;
+}
+
+.uct-modal-details{
+    padding-bottom: 10px;
+}
+
+
 
 /*Timeline Page Divider*/
 
 .timeline-item{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    padding-right: calc(50% + 40px);
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.timeline-item:nth-child(even){
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-right: 0;
+    padding-left: calc(50% + 40px);
+}
+
+.timeline-img{
+    width: 150px;
+    margin-right: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-img{
+    margin-right: 0;
+    margin-left: 20px;
 }
 
 .timeline::before{
@@ -505,9 +646,6 @@ footer{
     transform: translateX(-50%);
 }
 
-
-
-
 /*Projects Page*/
 
 
@@ -522,6 +660,9 @@ footer{
     max-width: 800px;
     margin: 0 auto;
     font-size: 18px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
 }
 
 .projects-hero-btns{
@@ -598,6 +739,9 @@ footer{
     max-width: 800px;
     margin: 0 auto;
     font-size: 18px;
+    letter-spacing: 0px;
+    word-spacing: 4px;
+    line-height: 1.4;
 }
 
 .contact-hero-btns{
@@ -662,15 +806,13 @@ footer{
 
 .contact-form button{
     width: 150px;
-    padding: 10px;
     margin: 0 auto;
+    margin-top: 20px;
     border: none;
     padding: 10px 15px;
     font-family: MontBlanc, sans-serif;
     background-color: #555451;
     color: #efefef;
-    width: 150px;
-    margin: 0 auto;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -679,12 +821,6 @@ footer{
     background-color: #757370;
 }
 
-.Linked-Logo{
-    filter: invert(1);
-    display: block;
-    width: 100px;
-    margin: 0 auto;
-}
 
 #email-logo{
     display: block;
@@ -696,3 +832,209 @@ footer{
     margin-bottom: 30px;
 }
 
+.Linked-Logo{
+    filter: invert(1);
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: -6px;
+    margin-top: 70px;
+}
+
+.Linked-button{
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    padding: 10px 15px;
+    font-family: MontBlanc, sans-serif;
+    background-color: #555451;
+    color: #efefef;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.Linked-button:hover{
+    background-color: #757370;
+}
+
+/*Responsive Design*/
+
+@media (max-width: 768px){
+
+
+    /*Nav*/
+
+    nav ul{
+        gap: 15px;
+    }
+
+    nav{
+        padding: 15px 20px;
+    }
+
+    .home-hero{
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        align-items: center;
+    }
+
+    .hero-text{
+        padding-left: 0;
+        padding-right: 0;
+        padding: 20px;
+    }
+
+    .hero-text h1{
+        font-size: 36px;
+    }
+
+    .hero-text h2{
+        font-size: 20px;
+    }
+
+    .hero-p{
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-btns{
+        justify-content: center;
+    }
+
+    .hero-img{
+        padding: 20px;
+        width: 200px;
+    }
+
+    /*Home Cards*/
+
+    .card-container{
+        grid-template-columns: 1fr;
+    }
+
+    .card li{
+        font-size: 18px;
+        line-height: 2.5;
+    }
+
+    /*About Hero Section*/
+
+    .about-hero-text h1{
+        font-size: 36px;
+        padding: 20px;
+    }
+
+    .about-hero-desc{
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    /*Timeline*/
+
+    .timeline-item, .timeline-item:nth-child(even){
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .timeline-item.dale{
+        flex-direction: column-reverse;
+    }
+
+    .timeline-item.uct{
+        flex-direction: column-reverse;
+    }
+
+    .timeline-img, .reddam .timeline-img, .dale .timeline-img, .wits .timeline-img, .uct .timeline-img{
+        display: block;
+        margin: 0 auto 20px auto;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+
+    }
+
+    .timeline::before, .timeline::after{
+        display: none;
+    }
+
+    .timeline-content, .reddam .timeline-content, .dale .timeline-content, .wits .timeline-content, .uct .timeline-content{
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        transform: none;
+    }
+
+
+    /*Modals*/
+
+    .modal-content{
+        width: 90%;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .reddam-modal-img, .dale-modal-img, .wits-modal-img, .uct-modal-img{
+        width: 150px;
+        margin: 0 auto 20px auto;
+    }
+
+     .reddam-modal-text, .dale-modal-text, .wits-modal-text, .uct-modal-text{
+        padding: 10px;
+        text-align: center;
+    }
+
+    /*Projects Page*/
+
+    .projects-grid{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .projects-heading{
+        font-size: 36px;
+        padding: 20px;
+    }
+
+    .projects-desc{
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    /*Contact Page*/
+    
+    .contact-heading{
+        font-size: 36px;
+        padding: 20px;
+    }
+
+    .contact-desc{
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .contact-form{
+        padding: 0 20px;
+    }
+
+    /*Footer*/
+
+    footer{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer p {
+        position: static;
+        transform: none;
+    }
+}
