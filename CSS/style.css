@@ -828,7 +828,7 @@ footer{
 
 /*Project 3 Modal*/
 
-.project3-modal-video{
+.project3-modal-img{
     width: 600px;
     margin-bottom: 50px;
     margin-top: 30px;
@@ -1165,7 +1165,7 @@ footer{
         padding: 10px;
     }
 
-    .project3-modal-video{
+    .project3-modal-img{
         width: 100%;
         max-width: 100%;
     }
