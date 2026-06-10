@@ -17,10 +17,10 @@
         <section class="hero project-hero"><!--Projects Hero Section-->
 
             <h1 class="projects-heading">Projects</h1>
-            <p class="projects-desc">A gallery of every major I have worked on over the years</p>
+            <p class="projects-desc">A gallery of every major project I have worked on over the years</p>
             
             <div class="projects-hero-btns">
-                <button>Download CV</button>
+                <a href="../Documents/Kiran Ramdass - CV.pdf" download> <button>Download CV</button> </a>
                 <a href="./contact.html"> <button>Contact Me</button> </a>
             </div>
 
@@ -32,32 +32,99 @@
         <section class="projects-section"><!--Projects-->
 
             <div class="projects-subheading">
-                <h2>Web and App Projects</h2>
-                <p>Websites and Apps I have developed</p>
+                <h2>Project Collection</h2>
+                <p>A collection of projects I have worked on in a variety of mediums</p>
             </div>
 
             <div class="projects-grid">
-                <article class="project-card">
-                    <h3>Project 1</h3>
-                    <img src="../Images/meowl.jpg" alt="">
-                    <p>Project 1 description</p>
+                <article class="project-card" data-modal="project1-modal">
+                    <h3>Graphic Design</h3>
+                    <img class="project1-img" src="../Images/Graphic Thumb.png" alt="Graphic Design Work">
 
                 </article>
 
-                <article class="project-card">
-                    <h3>Project 2</h3>
-                    <img src="../Images/meowl.jpg" alt="">
-                    <p>Project 2 description</p>
+                <article class="project-card" data-modal="project2-modal">
+                    <h3>Matric Jacket</h3>
+                    <img class="project2-img" src="../Images/Jacket Thumb.png" alt="Matric Jacket">
 
                 </article>
 
-                <article class="project-card">
-                    <h3>Project 3</h3>
-                    <img src="../Images/meowl.jpg" alt="">
-                    <p>Project 3 description</p>
+                <article class="project-card" data-modal="project3-modal">
+                    <h3>Pixel Man</h3>
+                    <img class="project3-img" src="../Images/Pixelman Logo.png" alt="Pixel Man">
 
                 </article>
-                
+
+                <div class="modal" id="project1-modal">
+                    <div class="modal-content graphic">
+
+                        <img class="project1-modal-img" src="../Images/Design Modal.png" alt="Graphic Design">
+
+                        <button class="modal-close">X</button>
+
+                        <div class="project1-modal-text">
+                            <h2 class="project1-modal-title" >Graphic Design</h2>
+                            <p class="project1-modal-details" >More Details:</p>
+                            <p> In my own time I enjoy creating mixed media prints that incorperate both graphic design practices as well as
+                            in person artistic practices to create visually appealing images in a collage style. The images displayed are collage
+                            pieces made over the past 3 years that make use of the aforementioned artistic practices and were excercies for me personally
+                            to be able to create meaningfull works of art that followed specific themes.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    
+
+                    
+                </div>
+
+                <div class="modal" id="project2-modal">
+                    <div class="modal-content">
+                        
+                        <div class="project2-imgs">
+                            <img class="project2-modal-img1" src="../Images/jackets modal.png" alt="">
+                            <img class="project2-modal-img2" src="../Images/Jacket Design Modal.png" alt="">
+                        </div>
+
+                        <button class="modal-close">X</button>
+
+                        <div class="project2-modal-text">
+                            <h2 class="project2-modal-title" >Matric Jacket</h2>
+                            <p class="project2-modal-details" >More Details:</p>
+                            <p>In 11th grade I volunteered to design the matric jacket that my grade would go on to use
+                                the following year. The images displayed are photos of the jackets design sketch, as
+                                well as photos of the jacket itself.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="modal" id="project3-modal">
+                    <div class="modal-content">
+
+                        <video class="project3-modal-video" controls>
+                            <source src="../Videos/Pixel Man Gameplay.mp4" type="video/mp4">
+                            Your Browser Does Not Support This Video
+                        </video>
+
+                        <button class="modal-close">X</button>
+
+                        <div class="project3-modal-text">
+                            <h2 class="project3-modal-title">Pixel Man</h2>
+                            <p class="project3-modal-details">More Details:</p>
+                            <p>Pixel Man is a 3D video game I developed in my first semester of third year
+                                game design. The game follows a stickman that gets stuck in an arcade game and
+                                has to defeat the enemies in the game to escape. I developed this game individually 
+                                and all the 3D models seen in the gameplay provided was created by myself.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>    
 
             </div>
 
