@@ -1177,6 +1177,14 @@ footer{
         padding: 10px;
     }
 
+    .project1-img, .project2-img, .project3-img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
     
 
     /*Contact Page*/
